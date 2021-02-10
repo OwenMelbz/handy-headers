@@ -38,9 +38,9 @@ export default function Home() {
               Handy Headers
           </h1>
 
-          <form action="/api/hello" method={'get'} onSubmit={search} className={'mt-10 block w-full border-2 border-white rounded-full flex items-center overflow-hidden p-4'}>
+          <form autoComplete={'off'} action="/api/hello" method={'get'} onSubmit={search} className={'mt-10 block w-full border-2 border-white rounded-full flex items-center overflow-hidden p-4'}>
               <div className={'flex-1 pr-5'}>
-                  <input placeholder={`e.g. ${defaultUrl}`} className={'text-center bg-transparent h-full w-full focus:outline-none'} name={'url'} type="url" onChange={e => setUrl(e.target.value)} value={ url }/>
+                  <input autoComplete={'off'} autoFocus={true} placeholder={`e.g. ${defaultUrl}`} className={'text-center bg-transparent h-full w-full focus:outline-none'} name={'url'} type="url" onChange={e => setUrl(e.target.value)} value={ url }/>
               </div>
               <div className={'w-10 h-10'}>
                   <button className={'w-full h-full p-1 focus:outline-none text-white hover:text-purple-200'} disabled={!url} type='submit'>
