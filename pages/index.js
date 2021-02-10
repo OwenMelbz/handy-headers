@@ -1,12 +1,11 @@
 import axios from 'axios';
 import Head from 'next/head'
+import '../console.image'
 import { useState } from 'react';
-import 'console.image'
 
 const defaultUrl = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
 
 export default function Home() {
-
     const [url, setUrl] = useState(defaultUrl)
     const [result, setResult] = useState(null)
 
@@ -16,8 +15,14 @@ export default function Home() {
 
         setResult(data)
 
+        console.clear();
         console.table(data.log.headers)
-        console.image(data.log.body)
+
+        if (data.log.image) {
+            console.image(data.log.body)
+        } else {
+            console.log(data.log.body)
+        }
     }
 
   return (

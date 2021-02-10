@@ -50,6 +50,8 @@ export default async (req, res) => {
 
   if (contentType.indexOf('text') !== -1) {
     body = await response.text()
+  } else if (contentType.indexOf('image') !== -1) {
+    body = req.query.url;
   } else {
     const base64 = (await response.buffer()).toString('base64')
     body = `data:${contentType};base64,${base64}`
@@ -70,6 +72,7 @@ export default async (req, res) => {
       'Content Type': contentType,
     },
     log: {
+      image: contentType.indexOf('image') !== -1,
       headers: headers,
       body,
     },

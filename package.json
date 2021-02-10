@@ -1,5 +1,5 @@
 {
-  "name": "expires-in",
+  "name": "handy-headers",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,6 @@
     "autoprefixer": "^10.2.4",
     "axios": "^0.21.1",
     "collect.js": "^4.28.6",
-    "console.image": "^1.0.2",
     "laravel-js-helpers": "^1.0.3",
     "moment": "^2.29.1",
     "next": "10.0.6",
