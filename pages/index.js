@@ -38,7 +38,7 @@ export default function Home() {
 
       <main className={'p-6 max-w-4xl mx-auto'} style={{ width: '100%'}}>
 
-          <h1 title={'Just the ones we need to see.'} className={'font-bold text-center uppercase text-xs'}>
+          <h1 title={'Just the ones we need to see.'} className={'font-bold text-center uppercase text-4xl text-purple-600'}>
               Handy Headers
           </h1>
 
@@ -60,27 +60,23 @@ export default function Home() {
               </div>
           </form>
 
-          { result && <div className={'mt-10 mx-auto max-w-lg'}>
-              <table>
-                  <tbody>
+          { result && <div className={'mt-10'}>
+              <div className={'max-w-md mx-auto'}>
                   { Object.keys(result.display).filter(key => result.display[key]).map(key => {
-                      return <tr key={key}>
-                          <th className={'text-left'}>
-                              <span className={'px-4'}>
+                      return <div key={key} className={'flex'}>
+                          <div className={'w-1/3'}>
+                              <span className={'font-bold'}>
                                   { key }:
                               </span>
-                          </th>
-                          <td>
-                              <span className={'px-4'}>
-                                  { result.display[key] }
-                              </span>
-                          </td>
-                      </tr>
+                          </div>
+                          <div title={ result.display[key] } className={'flex-1 truncate'}>
+                              { result.display[key] }
+                          </div>
+                      </div>
                   })}
-                  </tbody>
-              </table>
+              </div>
 
-              <div className={'text-xs text-center mt-20 px-4'}>
+              <div className={'w-full text-xs text-center mt-20 px-4 text-purple-400'}>
                   (check dev console for more data)
               </div>
           </div>}
